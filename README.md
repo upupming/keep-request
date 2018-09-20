@@ -14,7 +14,7 @@ $ sudo apt install tor
 $ sudo vi /etv/tor/torrc
 
 # In the file, add the following line to change IP per 60s:
-  MaxCircuitDirtiness 60
+  MaxCircuitDirtiness 3
 ```
 
 ## Start Tor
@@ -34,3 +34,18 @@ $ killall tor
 ```bash
 npm run request -- -u https://github.com -t 3000
 ```
+
+
+## Tips
+
+  To run Tor and keep-request in background even if you disconnect your server SSH connection, you can run them in a new screen:
+
+  ```bash
+  $ screen -S tor
+  $ tor
+  # Use control+A, then D to detach the screen, then open another screen
+
+  $ screen -S keep-proxy
+  $ npm run request -- -u https://github.com -t 3000
+  # Use control+A, then D to detach the screen
+  ```
