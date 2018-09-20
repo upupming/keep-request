@@ -13,7 +13,19 @@ const argv = require('yargs')
   .argv;
 
 setInterval(() => {
-  https.get(argv.url, res => {
-    console.log('statusCode:', res.statusCode);
+  let tr = require('tor-request');
+  tr.request('https://api.ipify.org', function (err, res, body) {
+    if (!err && res.statusCode == 200) {
+      console.log("Your public (through Tor) IP is: " + body);
+      tr.request(argv.url, function (err, res) {
+        if (!err && res.statusCode == 200) {
+          console.log(`Request OK: ${argv.url}`);
+        } else {
+          console.error('Request error: ' + err);
+        }
+      });
+    } else {
+      console.error('Request error: ' + err);
+    }
   });
 }, argv.timeout || 3000);
