@@ -8,7 +8,7 @@ Keep requesting a web page using different IP addresses.
 $ sudo apt install tor
 ```
 
-## Configure and Tor
+## Configure Tor
 
 ```bash
 $ sudo vi /etv/tor/torrc

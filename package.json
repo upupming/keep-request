@@ -13,8 +13,7 @@
   },
   "keywords": [
     "request",
-    "tor",
-    "proxychains"
+    "tor"
   ],
   "author": "upupming",
   "license": "MIT",
