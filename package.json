@@ -1,0 +1,29 @@
+{
+  "name": "keep-request",
+  "version": "1.0.0",
+  "description": "Keeping request a web page using different IP addresses.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "sudo apt install proxychains tor",
+    "request": "proxychains node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upupming/keep-request.git"
+  },
+  "keywords": [
+    "request",
+    "tor",
+    "proxychains"
+  ],
+  "author": "upupming",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/upupming/keep-request/issues"
+  },
+  "homepage": "https://github.com/upupming/keep-request#readme",
+  "dependencies": {
+    "yargs": "^12.0.2"
+  }
+}
